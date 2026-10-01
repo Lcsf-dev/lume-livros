@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lume Livros: uma livraria demonstrativa para descobrir novas leituras.">
+  <meta name="theme-color" content="#f7f3eb">
+  <title>Lume Livros | Histórias que ficam</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-pagina="inicio">
+  <a class="pular-conteudo" href="#catalogo">Pular para o catálogo</a>
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="marca" href="index.html" aria-label="Lume Livros, página inicial">
+        <span class="marca-simbolo" aria-hidden="true">✳</span>
+        <span>Lume<span class="marca-destaque">.</span><small>LIVROS</small></span>
+      </a>
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a href="#catalogo">Explorar livros</a>
+        <a href="#sobre">Sobre a Lume</a>
+      </nav>
+      <div class="acoes-cabecalho">
+        <button class="botao-icone botao-tema" type="button" data-alternar-tema aria-label="Ativar modo escuro" title="Alternar tema">
+          <span data-icone-tema aria-hidden="true">☾</span>
+        </button>
+        <button class="botao-carrinho" type="button" data-abrir-carrinho aria-label="Abrir carrinho, 0 itens">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6M10 21h.01M18 21h.01"/></svg>
+          <span class="carrinho-texto">Carrinho</span>
+          <span class="contagem-carrinho" data-contagem-carrinho>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="container hero-conteudo">
+        <div class="hero-texto">
+          <p class="sobretitulo"><span class="linha-decorativa"></span> BEM-VINDO À LUME LIVROS</p>
+          <h1 id="titulo-hero">Sua próxima história <em>começa aqui.</em></h1>
+          <p class="hero-descricao">Livros para explorar ideias, aprender algo novo e se perder em boas histórias. Encontre a leitura que combina com o seu momento.</p>
+          <a class="botao-primario" href="#catalogo">Explorar o catálogo <span aria-hidden="true">↗</span></a>
+          <p class="hero-nota">25 capas escolhidas para descobrir no seu ritmo.</p>
+        </div>
+        <div class="hero-visual" role="img" aria-label="Capas dos livros A Menina que Roubava Livros, Arquitetura Limpa e A Bíblia das Cores">
+          <div class="circulo-hero" aria-hidden="true"></div>
+          <img class="capa-hero capa-hero-esquerda" src="assets/img/arquitetura-limpa.jpeg" alt="" width="218" height="286">
+          <img class="capa-hero capa-hero-central" src="assets/img/a-menina-que-roubava-livros.jpeg" alt="" width="243" height="338">
+          <img class="capa-hero capa-hero-direita" src="assets/img/a-biblia-das-cores.jpeg" alt="" width="210" height="282">
+          <span class="selo-hero" aria-hidden="true">LEIA<br>MAIS<br>✳</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="faixa-editorial" aria-label="Valores da livraria">
+      <div class="container faixa-conteudo">
+        <span>Para mentes curiosas</span><span aria-hidden="true">✳</span>
+        <span>Para novas ideias</span><span aria-hidden="true">✳</span>
+        <span>Para boas histórias</span>
+      </div>
+    </section>
+
+    <section class="secao-catalogo container" id="catalogo" aria-labelledby="titulo-catalogo">
+      <div class="titulo-secao">
+        <div>
+          <p class="sobretitulo">ENCONTRE SUA PRÓXIMA LEITURA</p>
+          <h2 id="titulo-catalogo">Um universo de <em>livros.</em></h2>
+        </div>
+        <p>De romances a novas habilidades: explore todos os títulos em um só lugar.</p>
+      </div>
+
+      <div class="barra-ferramentas">
+        <div class="campo-pesquisa">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+          <label class="somente-leitor" for="pesquisa">Pesquisar livros pelo título</label>
+          <input id="pesquisa" type="search" placeholder="Busque por um título..." autocomplete="off">
+        </div>
+        <p class="contagem-resultados" id="contagem-resultados" role="status" aria-live="polite"></p>
+      </div>
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+      <div class="grade-produtos" id="grade-produtos"></div>
+      <div class="estado-vazio" id="busca-vazia" hidden>
+        <span aria-hidden="true">⌕</span>
+        <h3>Nenhum livro encontrado</h3>
+        <p>Tente outro título ou escolha uma categoria diferente.</p>
+        <button class="botao-secundario" type="button" id="limpar-filtros">Limpar filtros</button>
+      </div>
+    </section>
+
+    <section class="secao-sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="container sobre-conteudo">
+        <span class="sobre-asterisco" aria-hidden="true">✳</span>
+        <div>
+          <p class="sobretitulo">UM CONVITE À CURIOSIDADE</p>
+          <h2 id="titulo-sobre">Há sempre uma nova página para virar.</h2>
+        </div>
+        <p>A Lume é uma vitrine demonstrativa feita para aproximar leitores de histórias e conhecimento. Escolha seus favoritos e experimente a jornada de compra.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <a class="marca marca-rodape" href="index.html"><span class="marca-simbolo" aria-hidden="true">✳</span><span>Lume<span class="marca-destaque">.</span><small>LIVROS</small></span></a>
+      <p>Feito para quem acredita no poder de uma boa leitura.</p>
+      <p>Catálogo e preços demonstrativos. Nenhuma compra real é processada.</p>
+    </div>
+  </footer>
+
+  <dialog class="dialogo-carrinho" id="dialogo-carrinho" aria-labelledby="titulo-carrinho">
+    <div class="carrinho-cabecalho">
+      <div><p class="sobretitulo">SUAS ESCOLHAS</p><h2 id="titulo-carrinho">Meu carrinho <span data-contagem-carrinho>0</span></h2></div>
+      <button class="botao-icone fechar-carrinho" type="button" data-fechar-carrinho aria-label="Fechar carrinho">×</button>
+    </div>
+    <div class="carrinho-lista" id="carrinho-lista"></div>
+    <div class="carrinho-rodape" id="carrinho-rodape">
+      <div class="carrinho-total"><span>Total</span><strong id="carrinho-total">R$ 0,00</strong></div>
+      <a class="botao-primario botao-finalizar" href="checkout.html">Ir para o checkout <span aria-hidden="true">→</span></a>
+      <p>Simulação de compra, sem cobrança.</p>
+    </div>
+  </dialog>
+  <p class="notificacao" id="notificacao" role="status" aria-live="polite" hidden></p>
+</body>
+</html>

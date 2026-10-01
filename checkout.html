@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Finalize sua seleção na Lume Livros. Checkout demonstrativo, sem cobrança.">
+  <meta name="theme-color" content="#f7f3eb">
+  <title>Checkout | Lume Livros</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-pagina="checkout">
+  <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo</a>
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="marca" href="index.html" aria-label="Lume Livros, página inicial"><span class="marca-simbolo" aria-hidden="true">✳</span><span>Lume<span class="marca-destaque">.</span><small>LIVROS</small></span></a>
+      <a class="voltar-loja" href="index.html">← <span>Continuar explorando</span></a>
+      <button class="botao-icone botao-tema" type="button" data-alternar-tema aria-label="Ativar modo escuro" title="Alternar tema"><span data-icone-tema aria-hidden="true">☾</span></button>
+    </div>
+  </header>
+
+  <main class="checkout-principal container" id="conteudo-principal">
+    <div class="checkout-introducao">
+      <p class="sobretitulo">ÚLTIMO CAPÍTULO</p>
+      <h1>Finalize sua <em>seleção.</em></h1>
+      <p>Confira seus livros e preencha os dados para concluir esta simulação.</p>
+    </div>
+
+    <div class="checkout-layout">
+      <section class="painel-formulario" aria-labelledby="titulo-dados">
+        <div class="painel-titulo"><span>01</span><h2 id="titulo-dados">Seus dados</h2></div>
+        <form id="formulario-checkout" novalidate>
+          <div class="grupo-campo">
+            <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required aria-describedby="erro-nome" placeholder="Como podemos chamar você?">
+            <p class="erro-campo" id="erro-nome"></p>
+          </div>
+          <div class="grupo-campo">
+            <label for="email">E-mail <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="erro-email" placeholder="seu@email.com">
+            <p class="erro-campo" id="erro-email"></p>
+          </div>
+          <div class="grupo-campo">
+            <label for="pagamento">Método de pagamento <span aria-hidden="true">*</span></label>
+            <select id="pagamento" name="pagamento" required aria-describedby="erro-pagamento">
+              <option value="">Selecione uma opção</option>
+              <option value="pix">Pix</option>
+              <option value="cartao">Cartão de crédito</option>
+              <option value="boleto">Boleto bancário</option>
+            </select>
+            <p class="erro-campo" id="erro-pagamento"></p>
+          </div>
+          <p class="aviso-simulacao"><span aria-hidden="true">ⓘ</span> Esta é uma loja demonstrativa. Nenhum dado de pagamento é solicitado ou cobrado.</p>
+          <p class="erro-geral" id="erro-checkout" role="alert" hidden></p>
+          <button class="botao-primario botao-enviar" type="submit" id="concluir-pedido">Concluir simulação <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="sucesso-checkout" id="sucesso-checkout" role="status" tabindex="-1" hidden>
+          <span aria-hidden="true">✳</span>
+          <h2>Pedido simulado com sucesso!</h2>
+          <p>Obrigado por explorar a Lume Livros. Nenhuma cobrança foi realizada.</p>
+          <a class="botao-primario" href="index.html">Voltar ao catálogo <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <aside class="resumo-pedido" aria-labelledby="titulo-resumo">
+        <div class="painel-titulo"><span>02</span><h2 id="titulo-resumo">Seu pedido</h2></div>
+        <div id="resumo-itens"></div>
+        <div class="resumo-total"><span>Total</span><strong id="resumo-total">R$ 0,00</strong></div>
+        <p class="resumo-nota">Valores ilustrativos para esta demonstração.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-conteudo"><a class="marca marca-rodape" href="index.html"><span class="marca-simbolo" aria-hidden="true">✳</span><span>Lume<span class="marca-destaque">.</span><small>LIVROS</small></span></a><p>Feito para quem acredita no poder de uma boa leitura.</p><p>Catálogo e preços demonstrativos. Nenhuma compra real é processada.</p></div>
+  </footer>
+</body>
+</html>
